@@ -13,11 +13,19 @@ export default function App() {
 
   return (
     <View style={styles.container}>    
-      <Text>My Name Is: {name}.</Text>
-      <Text>His name is {person.name} and his age is {person.age}.</Text>
-      <View style={styles.buttonContainer}>
-        <Button title="update state" onPress={pressHandler} />
-      </View>      
+      <Text>Enter name:</Text>
+      <TextInput
+        multiline
+        style={styles.input}
+        placeholder='e.g. John Doe'
+        onChangeText={(val) => setName(val)} />
+      <Text>Enter age:</Text>
+      <TextInput 
+        keyboardType="numeric" 
+        style={styles.input}
+        placeholder='e.g. 25'
+        onChangeText={(val) => setAge(val)} />         
+      <Text>Name: {name}, Age: {age}</Text>          
     </View>
   );
 }
@@ -31,7 +39,13 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 20,
-
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#777',
+    padding: 8,
+    margin: 10,
+    width: 200,
   }
  
 });
