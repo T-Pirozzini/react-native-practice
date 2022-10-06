@@ -32,7 +32,7 @@ export default function App() {
     <View style={styles.container}> 
 
       <FlatList
-        numColumns={2}
+        // numColumns={2}
         keyExtractor={(item) => item.id}
         data={people}
         renderItem={({ item }) => (
@@ -42,15 +42,15 @@ export default function App() {
         )}
       />      
 
-      <ScrollView>
+      {/* <ScrollView>
         {people.map(item => (
           <View key={item.id}>
             <Text style={styles.item}>{item.name}</Text>
           </View>
         ))}
-      </ScrollView>
+      </ScrollView> */}
 
-      <Text>Enter name:</Text>
+      {/* <Text>Enter name:</Text>
       <TextInput
         multiline
         style={styles.input}
@@ -62,7 +62,7 @@ export default function App() {
         style={styles.input}
         placeholder='e.g. 25'
         onChangeText={(val) => setAge(val)} />         
-      <Text>Name: {name}, Age: {age}</Text> 
+      <Text>Name: {name}, Age: {age}</Text>  */}
 
     </View>
   );
